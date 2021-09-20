@@ -12,7 +12,7 @@
   "scripts": {
     "ci:test": "yarn test --runInBand",
     "clean": "cross-env rimraf node_modules && rimraf lib",
-    "compile": "npx babel -d lib/ --ignore spec.js src/ --copy-files",
+    "compile": "npx babel-cli -d lib/ --ignore spec.js src/ --copy-files",
     "coverage": "cross-env npx jest --coverage",
     "link:resolved:paths": "ln -sf $(pwd)/src/** ./node_modules && ln -sf $(pwd)/../../packages/blockchain-wallet-v4-frontend ./node_modules",
     "test": "cross-env npx jest",
@@ -98,5 +98,8 @@
     "stellar-sdk": "8.2.5",
     "unorm": "1.6.0",
     "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
